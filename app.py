@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, url_for
 from models import db, connect_db, Cupcake
 
 app = Flask(__name__)
@@ -10,6 +10,11 @@ app.config['SQLALCHEMY_ECHO'] = True
 with app.app_context():
     connect_db(app)
     db.create_all()
+    
+@app.route('/')
+def cupcakes_homepage():
+    """/ Route for Cupcakes"""
+    return render_template('cupcakes_homepage.html')
     
 @app.route('/api/cupcakes')
 def list_cupcakes():
