@@ -14,7 +14,7 @@ with app.app_context():
 @app.route('/')
 def cupcakes_homepage():
     """/ Route for Cupcakes"""
-    return render_template('cupcakes_homepage.html')
+    return render_template('cupcakes_home.html')
     
 @app.route('/api/cupcakes')
 def list_cupcakes():

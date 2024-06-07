@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src=”https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="/static/cupcakes.js"></script>
     <title>Cup Cakes Home</title>
-</head>
-<body> 
-    <ul>
-
-    </ul>
-</body>
+  </head>
+  <body>
+    <section class="list">
+      <h1>Cupcakes List</h1>
+      <ul id="cupcakesUL"></ul>
+    </section>
+    <section id="form" method>
+      <h2>Add A Cupcake</h2>
+      <form action="/api/cupcakes" method="POST" id="cupcakeForm">
+        <p>
+          <label for="flavor">Flavor:</label> <br />
+          <input type="text" id="flavor" name="flavor" />
+        </p>
+        <p>
+          <label for="size">Size:</label> <br />
+          <input type="text" name="size" id="size" />
+        </p>
+        <p>
+          <label for="rating">Rating:</label><br />
+          <input type="text" id="rating" name="rating" />
+        </p>
+        <p>
+          <label for="image">Image URL:</label><br />
+          <input type="url" id="image" name="image" />
+        </p>
+        <input type="submit" id="cupcakeSubmit" value="Submit Cupcake" />
+      </form>
+    </section>
+  </body>
 </html>
